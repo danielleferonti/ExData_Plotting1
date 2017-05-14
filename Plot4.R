@@ -55,9 +55,9 @@ plot(EPC_filt$DateTime,EPC_filt$Global_reactive_power,
 png(filename = "C:/RWorkingDir-DMF/CourseRA/Course4/Week1/Plot4.png", 
     width = 480, height = 480, 
     units= "px")
+par(mfrow = c(2,2), mar= c(4,4,2,1), oma= c(0.0,2,0))
 with(EPC_filt,
-     par(mfrow = c(2,2), mar= c(4,4,2,1), oma= c(0.0,2,0)),
-     plot(Global_active_power~DateTime, 
+     {plot(Global_active_power~DateTime, 
           type = "l",
           xlab = "",
           ylab="Global Active Power")
@@ -83,5 +83,5 @@ with(EPC_filt,
      plot(Global_reactive_power~DateTime, 
           type = "l",
           xlab = "datetime",
-          ylab="Global_reactive_power"))
+          ylab="Global_reactive_power")})
 dev.off()
